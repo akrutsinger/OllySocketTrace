@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="OllySocketTrace" />
+		<Option platforms="Windows;" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/debug/OllySocketTrace" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/debug/" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-march=i386" />
+					<Add option="-Wshadow" />
+					<Add option="-Winit-self" />
+					<Add option="-Wredundant-decls" />
+					<Add option="-Wcast-align" />
+					<Add option="-Wundef" />
+					<Add option="-Wfloat-equal" />
+					<Add option="-Winline" />
+					<Add option="-Wunreachable-code" />
+					<Add option="-Wmissing-declarations" />
+					<Add option="-Wmissing-include-dirs" />
+					<Add option="-Wswitch-enum" />
+					<Add option="-Wswitch-default" />
+					<Add option="-Wfatal-errors" />
+					<Add option="-Wextra" />
+					<Add option="-Wall" />
+					<Add option="-g" />
+					<Add option="-funsigned-char" />
+					<Add option="-Wno-missing-braces" />
+					<Add option="-DBUILD_DLL" />
+					<Add option="-DUNICODE=1" />
+					<Add option="-DDEBUG" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/release/OllySocketTrace" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/release/" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-march=i386" />
+					<Add option="-fexpensive-optimizations" />
+					<Add option="-O3" />
+					<Add option="-Wall" />
+					<Add option="-funsigned-char" />
+					<Add option="-Wno-missing-braces" />
+					<Add option="-DBUILD_DLL" />
+					<Add option="-DUNICODE=1" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-funsigned-char" />
+			<Add option="-Wno-missing-braces" />
+		</Compiler>
+		<Linker>
+			<Add library="user32" />
+			<Add library="./lib/ollydbg.lib" />
+			<Add library="Ws2_32" />
+			<Add library="gdi32" />
+		</Linker>
+		<Unit filename="src/DlgSocketTrace.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/DlgSocketTrace.h" />
+		<Unit filename="src/DlgSocketTrace.rc">
+			<Option compilerVar="WINDRES" />
+		</Unit>
+		<Unit filename="src/Hooks.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/Hooks.h" />
+		<Unit filename="src/MemCheck.c">
+			<Option compilerVar="CC" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="src/MemCheck.h">
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="src/OllySocketTrace.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/OllySocketTrace.h" />
+		<Unit filename="src/plugin.h" />
+		<Unit filename="src/resource.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+			<envvars />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
